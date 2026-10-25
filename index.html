@@ -39,10 +39,11 @@
   }
   img { max-width: 100%; height: auto; display: block; }
   a { color: var(--maroon); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  /* Side gutter for every .wrap; blocks that also carry .wrap set only top/bottom padding so they keep it. */
+  .wrap { max-width: 1080px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
 
   /* Header */
-  .top { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; }
+  .top { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
   .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .brand img { width: 40px; height: 40px; border-radius: 10px; }
   .brand span { font: italic 700 24px/1 var(--display); color: var(--deep-maroon); }
@@ -56,7 +57,7 @@
   h1, h2, h3 { font-family: var(--display); color: var(--deep-maroon); margin: 0; line-height: 1.12; }
 
   /* Hero */
-  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding: 40px 0 72px; }
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding-top: 40px; padding-bottom: 72px; }
   .hero h1 { font-size: clamp(40px, 6vw, 68px); letter-spacing: -.01em; }
   .hero .lede { font-size: 20px; color: var(--ink-muted); margin: 20px 0 32px; max-width: 32em; }
   .hero .phone { justify-self: center; max-width: 340px; filter: drop-shadow(0 24px 40px rgba(80, 2, 17, .14)); }
