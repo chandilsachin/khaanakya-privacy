@@ -62,11 +62,11 @@ a{color:inherit}
 .dish{position:absolute;width:150px;padding:12px;border-radius:16px;background:var(--paper);color:var(--fg);font-family:var(--sans);box-shadow:0 14px 30px rgba(0,0,0,.35);
   animation:bob 6s ease-in-out infinite}
 .dish b{display:block;font-size:14px}.dish span{font-size:12px;color:var(--muted)}
-.dish i{display:block;height:64px;border-radius:10px;margin-bottom:8px}
-.dish:nth-child(1){left:2%;top:10px;--r:-6deg}.dish:nth-child(1) i{background:#E7A74B}
-.dish:nth-child(2){right:0;top:60px;--r:5deg;animation-delay:-2s}.dish:nth-child(2) i{background:#8C3A27}
-.dish:nth-child(3){left:14%;bottom:0;--r:3deg;animation-delay:-4s}.dish:nth-child(3) i{background:#4E6B5C}
-.dish:nth-child(4){right:6%;bottom:30px;--r:-4deg;animation-delay:-1s}.dish:nth-child(4) i{background:#2E3A66}
+.dish img{display:block;width:100%;height:86px;object-fit:cover;border-radius:10px;margin-bottom:8px;background:var(--thumb)}
+.dish:nth-child(1){left:2%;top:10px;--r:-6deg}
+.dish:nth-child(2){right:0;top:60px;--r:5deg;animation-delay:-2s}
+.dish:nth-child(3){left:14%;bottom:0;--r:3deg;animation-delay:-4s}
+.dish:nth-child(4){right:6%;bottom:30px;--r:-4deg;animation-delay:-1s}
 @keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-12px) rotate(var(--r))}}
 .scrollcue{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;padding-bottom:26px;text-align:center}
 .scrollcue span{display:inline-block;animation:nudge 1.6s ease-in-out infinite}
@@ -111,7 +111,7 @@ footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--mute
 /* ---------- narrow ---------- */
 @media (max-width:860px){
   .hero .wrap{grid-template-columns:1fr;padding-block:36px 20px}
-  .hero-art{height:320px}.dish{width:124px;padding:9px}.dish i{height:44px}
+  .hero-art{height:320px}.dish{width:124px;padding:9px}.dish img{height:56px}
   .story-grid{display:block;position:relative}
   .pin{position:sticky;top:0;height:60vh;z-index:3;background:linear-gradient(var(--bg) 80%,transparent);align-items:flex-start;padding-top:8px}
   .phone{transform:scale(.62);transform-origin:top center;margin-bottom:-230px}
@@ -140,10 +140,10 @@ footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--mute
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
-      <div class="dish"><i></i><b>Aloo Paratha</b><span>Breakfast · 25 min</span></div>
-      <div class="dish"><i></i><b>Dal Tadka</b><span>Dinner · 35 min</span></div>
-      <div class="dish"><i></i><b>Masala Dosa</b><span>South Indian · 40 min</span></div>
-      <div class="dish"><i></i><b>Rajma Chawal</b><span>Lunch · 50 min</span></div>
+      <div class="dish"><img src="assets/dishes/aloo-paratha.webp" alt="" width="400" height="400"><b>Aloo Paratha</b><span>Breakfast · 25 min</span></div>
+      <div class="dish"><img src="assets/dishes/dal-tadka.webp" alt="" width="400" height="400"><b>Dal Tadka</b><span>Dinner · 35 min</span></div>
+      <div class="dish"><img src="assets/dishes/paneer-butter-masala.webp" alt="" width="400" height="400"><b>Paneer Butter Masala</b><span>North Indian · 40 min</span></div>
+      <div class="dish"><img src="assets/dishes/rajma-chawal.webp" alt="" width="400" height="400"><b>Rajma Chawal</b><span>Lunch · 50 min</span></div>
     </div>
   </div>
   <div class="scrollcue" aria-hidden="true"><span>↓</span> Scroll</div>
