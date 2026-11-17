@@ -89,99 +89,14 @@ a{color:inherit}
 .dots i{width:7px;height:7px;border-radius:50%;background:var(--cardBorder);transition:.3s}
 .dots i.on{background:var(--saffron);height:22px;border-radius:5px}
 
-/* ---------- phone ---------- */
+/* ---------- phone (real app screenshots) ---------- */
 .phone{width:300px;height:620px;border-radius:44px;background:var(--frame);padding:9px;box-shadow:0 30px 60px rgba(60,20,10,.28),0 0 0 1px rgba(0,0,0,.2);transform-origin:center}
-.screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background-color:var(--paper);
-  background-image:radial-gradient(circle at 8px 8px,var(--dot) .75px,transparent 1.1px);background-size:16px 16px;
-  font-family:var(--sans);font-size:13px;color:var(--fg);line-height:1.25}
-.screen *{margin:0}
-.island{position:absolute;left:50%;top:9px;width:84px;height:24px;margin-left:-42px;border-radius:14px;background:#000;z-index:20}
-.sbar{position:absolute;inset:0 0 auto 0;height:40px;padding:12px 22px 0;display:flex;justify-content:space-between;font-weight:700;font-size:12px;z-index:19}
-.scr{position:absolute;inset:0;padding-top:42px;padding-bottom:62px;opacity:0;transform:translateY(14px) scale(.985);transition:opacity .45s,transform .45s;pointer-events:none;overflow:hidden}
-.scr.on{opacity:1;transform:none}
-.top{height:42px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-style:italic;font-weight:700;font-size:20px;color:var(--heading);position:relative}
-.top .back{position:absolute;left:14px;font-style:normal;font-family:var(--sans);font-size:18px}
-.h1{font-family:var(--display);font-weight:700;font-size:21px;color:var(--heading);padding:4px 16px 0}
-.sub{font-family:var(--serif);font-style:italic;color:var(--muted);padding:4px 16px 10px;font-size:13px}
-.srow{display:flex;gap:8px;padding:0 14px 8px;align-items:center}
-.search{flex:1;height:40px;border-radius:20px;background:var(--paper);border:1px solid var(--cardBorder);display:flex;align-items:center;padding:0 14px;color:var(--muted);box-shadow:0 2px 6px rgba(0,0,0,.08)}
-.pickbtn{width:40px;height:40px;border-radius:50%;background:var(--maroonFill);color:var(--onMaroonFill);display:grid;place-items:center;font-size:17px;transition:transform .3s}
-.pickbtn.hit{transform:scale(1.25) rotate(20deg);box-shadow:0 0 0 8px rgba(233,168,90,.35)}
-.pills{display:flex;gap:6px;padding:0 14px 8px}
-.pills span{padding:6px 11px;border-radius:15px;background:var(--chip);font-weight:600;font-size:12px}
-.pills span.sel{background:var(--maroonFill);color:var(--onMaroonFill)}
-.row{display:flex;gap:10px;align-items:center;margin:0 14px 8px;padding:8px;border-radius:14px;background:var(--card);border:1px solid var(--cardBorder)}
-.th{width:44px;height:44px;border-radius:10px;background:var(--thumb);flex:none;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:18px;color:var(--heading)}
-.row b{display:block;font-size:13.5px}.row small{color:var(--muted);font-size:11.5px}
-.vg{display:inline-block;width:9px;height:9px;border:1.5px solid var(--veg);border-radius:2px;position:relative;margin-right:5px;vertical-align:-1px}
-.vg::after{content:"";position:absolute;inset:1.5px;border-radius:50%;background:var(--veg)}
-.slide .row{transform:translateX(60px);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .45s}
-.scr.on .slide .row{transform:none;opacity:1}
-.scr.on .slide .row:nth-child(2){transition-delay:.06s}.scr.on .slide .row:nth-child(3){transition-delay:.12s}
-.scr.on .slide .row:nth-child(4){transition-delay:.18s}.scr.on .slide .row:nth-child(5){transition-delay:.24s}
-.result{position:absolute;left:14px;right:14px;top:150px;border-radius:20px;background:var(--maroonFill);color:var(--onMaroonFill);padding:16px;box-shadow:0 20px 40px rgba(0,0,0,.35);
-  transform:translateY(40px) scale(.9);opacity:0;transition:.4s cubic-bezier(.2,.9,.3,1.2);z-index:5}
-.result.show{transform:none;opacity:1}
-.result small{opacity:.8;font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:10.5px}
-.result h4{font-family:var(--display);font-size:24px;margin:4px 0 6px}
-.result .go{display:inline-block;margin-top:10px;padding:8px 16px;border-radius:18px;background:#E9A85A;color:#3B1A00;font-weight:700}
-.tabbar{position:absolute;inset:auto 0 0 0;height:62px;padding:8px 10px 14px;display:flex;justify-content:space-around;background:var(--paper);border-top:1px solid var(--hairline);z-index:15}
-.tabbar span{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:10px;font-weight:600;color:var(--muted);width:60px;border-radius:12px;transition:.3s}
-.tabbar span u{text-decoration:none;font-size:16px}
-.tabbar span.on{color:var(--heading);background:var(--chip)}
-/* cookbook */
-.shelf{display:flex;gap:10px;padding:0 14px 10px;will-change:transform}
-.cuisine{flex:none;width:112px;height:128px;border-radius:14px;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;font-family:var(--display);font-weight:700;font-size:17px;line-height:1.1}
-.az{display:flex;justify-content:space-between;padding:6px 16px;font-size:11px;font-weight:700;color:var(--muted)}
-/* dish page */
-.hero-tile{margin:0 14px;height:112px;border-radius:18px;background:linear-gradient(135deg,#E7A74B,#B8651B);display:grid;place-items:center;font-family:var(--display);font-style:italic;font-size:34px;color:#3B1A00;position:relative;overflow:hidden}
-.chips{display:flex;gap:6px;padding:8px 14px}
-.chips span{padding:4px 10px;border-radius:12px;background:var(--chip);font-size:11.5px;font-weight:600}
-.ing{display:flex;align-items:center;gap:10px;margin:0 14px;padding:7px 0;border-bottom:1px solid var(--hairline)}
-.ing .ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;flex:none}
-.ing b{flex:1;font-weight:600}.ing small{color:var(--muted)}
-.ing{opacity:0;transform:translateY(10px);transition:.4s}
-.scr.on .ing{opacity:1;transform:none}
-.scr.on .ing:nth-of-type(1){transition-delay:.1s}.scr.on .ing:nth-of-type(2){transition-delay:.17s}.scr.on .ing:nth-of-type(3){transition-delay:.24s}
-.scr.on .ing:nth-of-type(4){transition-delay:.31s}.scr.on .ing:nth-of-type(5){transition-delay:.38s}.scr.on .ing:nth-of-type(6){transition-delay:.45s}
-.fbtn{margin:10px 14px 0;height:40px;border-radius:20px;display:flex;align-items:center;justify-content:center;gap:8px;font-weight:700}
-.fbtn.p{background:var(--maroonFill);color:var(--onMaroonFill)}
-.fbtn.o{border:1.5px solid var(--maroonFill);color:var(--heading);transition:.3s}
-.fbtn.o.hit{background:var(--maroonFill);color:var(--onMaroonFill);transform:scale(.97)}
-.sheet{position:absolute;inset:auto 0 0 0;height:300px;border-radius:22px 22px 0 0;background:var(--paper);border-top:1px solid var(--cardBorder);box-shadow:0 -14px 30px rgba(0,0,0,.3);
-  transform:translateY(105%);transition:transform .5s cubic-bezier(.2,.8,.2,1);z-index:10;padding:14px}
-.sheet.show{transform:none}
-.sheet .grab{width:36px;height:4px;border-radius:2px;background:var(--cardBorder);margin:0 auto 10px}
-.yt{display:flex;gap:10px;margin-top:10px}
-.yt .v{width:96px;height:56px;border-radius:8px;background:#2A2A2C;display:grid;place-items:center;color:#fff;flex:none;font-size:16px}
-.yt b{font-size:12.5px;display:block}.yt small{color:var(--muted);font-size:11px}
-.scrim{position:absolute;inset:0;background:rgba(0,0,0,.4);opacity:0;transition:.4s;z-index:9}
-.scrim.show{opacity:1}
-/* week */
-.day{display:flex;gap:8px;align-items:center;margin:0 14px 7px}
-.day em{width:32px;font-style:normal;font-weight:700;color:var(--heading)}
-.slot{flex:1;height:44px;border-radius:12px;border:1.5px dashed var(--cardBorder);display:flex;align-items:center;padding:0 10px;gap:6px;font-size:11.5px;font-weight:600;transition:.4s;color:transparent;background:transparent}
-.slot.f{border:1px solid var(--cardBorder);background:var(--card);color:var(--fg);transform:none;animation:pop .4s}
-@keyframes pop{from{transform:scale(.85);opacity:.3}}
-/* shopping */
-.grp{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--saffron);padding:8px 16px 4px}
-.li{display:flex;align-items:center;gap:10px;margin:0 14px;padding:7px 0;border-bottom:1px solid var(--hairline)}
-.li .cb{width:20px;height:20px;border-radius:6px;border:1.5px solid var(--muted);display:grid;place-items:center;font-size:12px;color:transparent;transition:.25s;flex:none}
-.li.c .cb{background:var(--veg);border-color:var(--veg);color:#fff}
-.li b{flex:1;font-weight:600;transition:.25s}.li small{color:var(--muted)}
-.li.c b{text-decoration:line-through;opacity:.5}
-.prog{margin:8px 14px 0;height:6px;border-radius:3px;background:var(--chip);overflow:hidden}
-.prog i{display:block;height:100%;width:0;background:var(--veg);border-radius:3px;transition:width .3s}
-/* kitchen */
-.stk{margin:0 14px 8px;padding:10px;border-radius:14px;background:var(--card);border:1px solid var(--cardBorder)}
-.stk .l{display:flex;justify-content:space-between;font-weight:700}.stk .l small{font-weight:600}
-.bar{height:7px;border-radius:4px;background:var(--chip);margin-top:7px;overflow:hidden}
-.bar i{display:block;height:100%;width:0;border-radius:4px}
-.ok{color:var(--veg)}.low{color:var(--amber)}.out{color:var(--rust)}
-.backup{margin:4px 14px 0;padding:10px 12px;border-radius:14px;background:var(--maroonFill);color:var(--onMaroonFill);display:flex;gap:10px;align-items:center;transform:translateY(20px);opacity:0;transition:.5s}
-.backup.show{transform:none;opacity:1}
-.backup .ck{width:22px;height:22px;border-radius:50%;background:#E9A85A;color:#3B1A00;display:grid;place-items:center;font-weight:700;flex:none}
-.backup small{display:block;opacity:.8;font-size:11px}
+.screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#FDFBF7}
+.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .45s,transform .6s cubic-bezier(.2,.8,.2,1);transform:translateY(10px) scale(.985)}
+.screen img.on{opacity:1;transform:none}
+.ring{position:absolute;left:64%;top:12.4%;width:31%;height:4.6%;border-radius:20px;border:3px solid #E9A85A;opacity:0;pointer-events:none;box-shadow:0 0 0 0 rgba(233,168,90,.6);z-index:2}
+.ring.on{opacity:1;animation:ping 1.4s ease-out infinite}
+@keyframes ping{to{box-shadow:0 0 0 14px rgba(233,168,90,0)}}
 
 /* ---------- closing ---------- */
 .close{margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));
@@ -251,15 +166,15 @@ footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--mute
       </section>
       <section class="step" data-i="2">
         <div class="eyebrow">Dish page</div>
-        <h2>Ingredients, ready at a glance.</h2>
-        <p>Open a dish to see what goes in, how long it takes and how many it serves. Add what you're missing to your list in one tap.</p>
-        <div class="tags"><span>Veg or non-veg</span><span>Cooking time</span><span>Full ingredients</span></div>
+        <h2>Every ingredient, with a picture.</h2>
+        <p>Open a dish to see how long it takes and exactly what goes in. Copy the ingredients, or save the dish to a list.</p>
+        <div class="tags"><span>Cooking time</span><span>Full ingredients</span><span>Add to a list</span></div>
       </section>
       <section class="step" data-i="3">
         <div class="eyebrow">Recipe video</div>
-        <h2>Need to see it cooked? Search YouTube.</h2>
-        <p>One button runs a YouTube search for the dish, so you can watch someone make it before you start.</p>
-        <div class="tags"><span>Opens YouTube</span><span>Dish name pre-filled</span></div>
+        <h2>Need to see it cooked?</h2>
+        <p>Tap Find a recipe and search YouTube for the dish, or browse Instagram, so you can watch someone make it first.</p>
+        <div class="tags"><span>Search YouTube</span><span>Browse Instagram</span></div>
       </section>
       <section class="step" data-i="4">
         <div class="eyebrow">Week plan</div>
@@ -274,126 +189,27 @@ footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--mute
         <div class="tags"><span>Grouped by aisle</span><span>Tick as you go</span></div>
       </section>
       <section class="step" data-i="6">
-        <div class="eyebrow">Kitchen and backup</div>
-        <h2>Know what's left. Never lose it.</h2>
-        <p>Kitchen shows how many days of each staple remain and flags what ran out. Your data backs up to Google Drive.</p>
-        <div class="tags"><span>Days left</span><span>Ran out</span><span>Drive backup</span></div>
+        <div class="eyebrow">Kitchen</div>
+        <h2>Know what's left in the kitchen.</h2>
+        <p>See how many days of each staple remain, what is running low and what ran out, so the next shopping list is already right.</p>
+        <div class="tags"><span>Days left</span><span>Running low</span><span>Ran out</span></div>
       </section>
     </div>
 
     <div class="pin">
       <div class="pinbox">
         <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="phone" role="img" aria-label="KhaanaKya app screens, changing as you scroll">
-          <div class="screen">
-            <div class="island"></div>
-            <div class="sbar"><span>9:41</span><span>●●● ▮</span></div>
-
-            <!-- 0 Home -->
-            <div class="scr on" id="s0">
-              <div class="top">KhaanaKya</div>
-              <div class="h1">Good evening</div>
-              <div class="sub">What's for dinner tonight?</div>
-              <div class="srow"><div class="search">⌕&nbsp; Search dishes</div><div class="pickbtn" id="pick">✦</div></div>
-              <div class="pills"><span>Breakfast</span><span>Lunch</span><span>Snacks</span><span class="sel">Dinner</span></div>
-              <div class="slide">
-                <div class="row"><div class="th">P</div><div><b><i class="vg"></i>Paneer Butter Masala</b><small>North Indian · 40 min</small></div></div>
-                <div class="row"><div class="th">D</div><div><b><i class="vg"></i>Dal Tadka</b><small>Everyday dal-sabzi · 35 min</small></div></div>
-                <div class="row"><div class="th">K</div><div><b><i class="vg"></i>Khichdi</b><small>Quick &amp; fuss-free · 30 min</small></div></div>
-                <div class="row"><div class="th">B</div><div><b><i class="vg"></i>Bhindi Masala</b><small>North Indian · 30 min</small></div></div>
-              </div>
-              <div class="result" id="result"><small>Tonight, try</small><h4>Dal Tadka</h4><div>Warm, easy and 35 minutes. You have the dal.</div><span class="go">Open dish</span></div>
-            </div>
-
-            <!-- 1 Cookbook -->
-            <div class="scr" id="s1">
-              <div class="top">Cookbook</div>
-              <div class="h1">Cuisines</div>
-              <div class="sub">Pick a shelf to browse</div>
-              <div class="shelf" id="shelf">
-                <div class="cuisine" style="background:#6E1A24;color:#FFDADA">North Indian</div>
-                <div class="cuisine" style="background:#373C2B;color:#E0E5CC">South Indian</div>
-                <div class="cuisine" style="background:#FE932C;color:#500211">Gujarati</div>
-                <div class="cuisine" style="background:#8C3A27;color:#FFE8DE">Bengali</div>
-                <div class="cuisine" style="background:#2E3A66;color:#E3E6F5">Rajasthani</div>
-                <div class="cuisine" style="background:#2E5E3A;color:#DDEFD9">Maharashtrian</div>
-              </div>
-              <div class="az"><span>A</span><span>B</span><span>C</span><span>D</span><span>H</span><span>K</span><span>M</span><span>P</span><span>R</span><span>S</span></div>
-              <div class="row"><div class="th">A</div><div><b><i class="vg"></i>Aloo Paratha</b><small>Breakfast staples</small></div></div>
-              <div class="row"><div class="th">B</div><div><b><i class="vg"></i>Baingan Bharta</b><small>North Indian</small></div></div>
-              <div class="row"><div class="th">C</div><div><b><i class="vg"></i>Chole Bhature</b><small>Street food &amp; chaat</small></div></div>
-            </div>
-
-            <!-- 2 Dish page -->
-            <div class="scr" id="s2">
-              <div class="top"><span class="back">‹</span>Dal Tadka</div>
-              <div class="hero-tile">Dal Tadka</div>
-              <div class="chips"><span><i class="vg"></i>Veg</span><span>35 min</span><span>Serves 4</span></div>
-              <div class="grp">Ingredients</div>
-              <div class="ing"><span class="ic" style="background:#C98A2E">T</span><b>Toor dal</b><small>1 cup</small></div>
-              <div class="ing"><span class="ic" style="background:#A3361F">O</span><b>Onion</b><small>1 large</small></div>
-              <div class="ing"><span class="ic" style="background:#C0392B">T</span><b>Tomato</b><small>2</small></div>
-              <div class="ing"><span class="ic" style="background:#8E7B5E">G</span><b>Garlic</b><small>6 cloves</small></div>
-              <div class="ing"><span class="ic" style="background:#E0A52A">G</span><b>Ghee</b><small>2 tbsp</small></div>
-              <div class="ing"><span class="ic" style="background:#904D00">J</span><b>Jeera</b><small>1 tsp</small></div>
-              <div class="fbtn p">Add to shopping list</div>
-            </div>
-
-            <!-- 3 YouTube -->
-            <div class="scr" id="s3">
-              <div class="top"><span class="back">‹</span>Dal Tadka</div>
-              <div class="hero-tile">Dal Tadka</div>
-              <div class="chips"><span><i class="vg"></i>Veg</span><span>35 min</span><span>Serves 4</span></div>
-              <div class="fbtn p">Add to shopping list</div>
-              <div class="fbtn o" id="ytbtn">▶&nbsp; Search the recipe on YouTube</div>
-              <div class="scrim" id="scrim"></div>
-              <div class="sheet" id="sheet">
-                <div class="grab"></div>
-                <b style="font-size:14px">YouTube</b>
-                <div class="search" style="margin-top:8px;height:34px">dal tadka recipe</div>
-                <div class="yt"><div class="v">▶</div><div><b>Restaurant style dal tadka</b><small>12 min · home cook</small></div></div>
-                <div class="yt"><div class="v">▶</div><div><b>Easy dal tadka in a cooker</b><small>8 min · home cook</small></div></div>
-                <div class="yt"><div class="v">▶</div><div><b>Dhaba dal tadka</b><small>15 min · home cook</small></div></div>
-              </div>
-            </div>
-
-            <!-- 4 Week -->
-            <div class="scr" id="s4">
-              <div class="top">Week plan</div>
-              <div class="sub" style="padding-top:2px">Lunch and dinner for each day</div>
-              <div id="week"></div>
-            </div>
-
-            <!-- 5 Shopping -->
-            <div class="scr" id="s5">
-              <div class="top">Shopping list</div>
-              <div class="prog"><i id="prog"></i></div>
-              <div class="grp">Vegetables</div>
-              <div class="li"><span class="cb">✓</span><b>Onion</b><small>3</small></div>
-              <div class="li"><span class="cb">✓</span><b>Tomato</b><small>6</small></div>
-              <div class="li"><span class="cb">✓</span><b>Bhindi</b><small>500 g</small></div>
-              <div class="grp">Dairy</div>
-              <div class="li"><span class="cb">✓</span><b>Paneer</b><small>250 g</small></div>
-              <div class="li"><span class="cb">✓</span><b>Ghee</b><small>1 jar</small></div>
-              <div class="grp">Pantry</div>
-              <div class="li"><span class="cb">✓</span><b>Toor dal</b><small>1 kg</small></div>
-              <div class="li"><span class="cb">✓</span><b>Basmati rice</b><small>2 kg</small></div>
-            </div>
-
-            <!-- 6 Kitchen -->
-            <div class="scr" id="s6">
-              <div class="top">Kitchen</div>
-              <div class="sub" style="padding-top:2px">Days left at your pace</div>
-              <div class="stk"><div class="l">Atta <small class="ok" data-d="12">12 days</small></div><div class="bar"><i style="background:var(--veg)" data-w="85"></i></div></div>
-              <div class="stk"><div class="l">Toor dal <small class="ok" data-d="9">9 days</small></div><div class="bar"><i style="background:var(--veg)" data-w="62"></i></div></div>
-              <div class="stk"><div class="l">Ghee <small class="low" data-d="3">3 days</small></div><div class="bar"><i style="background:var(--amber)" data-w="24"></i></div></div>
-              <div class="stk"><div class="l">Basmati rice <small class="out">Ran out</small></div><div class="bar"><i style="background:var(--rust)" data-w="4"></i></div></div>
-              <div class="backup" id="backup"><span class="ck">✓</span><div><b>Backed up to Google Drive</b><small>Just now</small></div></div>
-            </div>
-
-            <div class="tabbar" id="tabs">
-              <span class="on"><u>⌂</u>Home</span><span><u>▤</u>Cookbook</span><span><u>▦</u>Week</span><span><u>◫</u>Kitchen</span>
-            </div>
+        <div class="phone" role="img" aria-label="Screens from the KhaanaKya app, changing as you scroll">
+          <div class="screen" id="screen">
+            <img data-k="home" class="on" src="assets/tour/home.jpg" alt="" width="1320" height="2868">
+            <img data-k="cookbook" src="assets/tour/cookbook.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <img data-k="dish" src="assets/tour/youtube-bar.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <img data-k="ingredients" src="assets/tour/ingredients.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <img data-k="youtube" src="assets/tour/youtube.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <img data-k="week" src="assets/tour/week-plan.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <img data-k="shopping" src="assets/tour/shopping.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <img data-k="kitchen" src="assets/tour/kitchen.jpg" alt="" width="1320" height="2868" loading="lazy">
+            <div class="ring" id="ring"></div>
           </div>
         </div>
       </div>
@@ -414,57 +230,23 @@ footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--mute
 <script>
 (function(){
   var steps=[].slice.call(document.querySelectorAll('.step'));
-  var scr=steps.map(function(_,i){return document.getElementById('s'+i)});
-  var dots=[].slice.call(document.querySelectorAll('#dots i'));
-  var tabs=[].slice.call(document.querySelectorAll('#tabs span'));
-  var tabOf=[0,1,1,1,2,2,3];
-  // build week rows
-  var days=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-  var meals=[['Poha','Dal Tadka'],['Idli Sambar','Rajma Chawal'],['Aloo Paratha','Bhindi Masala'],['Upma','Palak Paneer'],['Besan Chilla','Khichdi'],['Masala Dosa','Chole Bhature'],['Puri Aloo','Paneer Butter Masala']];
-  var week=document.getElementById('week'),slots=[];
-  days.forEach(function(d,i){
-    var r=document.createElement('div');r.className='day';
-    r.innerHTML='<em>'+d+'</em><div class="slot">'+meals[i][0]+'</div><div class="slot">'+meals[i][1]+'</div>';
-    week.appendChild(r);slots.push.apply(slots,r.querySelectorAll('.slot'));
-  });
-  var lis=[].slice.call(document.querySelectorAll('#s5 .li'));
-  var bars=[].slice.call(document.querySelectorAll('#s6 .bar i'));
-  var shelf=document.getElementById('shelf'),pick=document.getElementById('pick'),result=document.getElementById('result');
-  var ytbtn=document.getElementById('ytbtn'),sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim');
-  var backup=document.getElementById('backup'),prog=document.getElementById('prog');
-  var cur=-1,ticking=false;
-
-  function setStep(i){
-    if(i===cur)return;cur=i;
-    steps.forEach(function(s,k){s.classList.toggle('on',k===i)});
-    scr.forEach(function(s,k){s.classList.toggle('on',k===i)});
-    dots.forEach(function(d,k){d.classList.toggle('on',k===i)});
-    tabs.forEach(function(t,k){t.classList.toggle('on',k===tabOf[i])});
-  }
-  function drive(i,p){
-    if(i===0){var h=p>.5;pick.classList.toggle('hit',h&&p<.62);result.classList.toggle('show',p>.55)}
-    if(i===1){shelf.style.transform='translateX('+(-p*200).toFixed(1)+'px)'}
-    if(i===3){var o=p>.4;ytbtn.classList.toggle('hit',p>.3);sheet.classList.toggle('show',o);scrim.classList.toggle('show',o)}
-    if(i===4){var n=Math.round(p*1.25*slots.length);slots.forEach(function(s,k){s.classList.toggle('f',k<n)})}
-    if(i===5){var c=Math.round(p*1.3*lis.length);lis.forEach(function(l,k){l.classList.toggle('c',k<c)});prog.style.width=Math.min(100,c/lis.length*100)+'%'}
-    if(i===6){var g=Math.min(1,p*2.2);bars.forEach(function(b){b.style.width=(b.dataset.w*g)+'%'});backup.classList.toggle('show',p>.5)}
-  }
+  var imgs={};[].forEach.call(document.querySelectorAll('#screen img'),function(i){imgs[i.dataset.k]=i});
+  var dots=[].slice.call(document.querySelectorAll('#dots i')),ring=document.getElementById('ring');
+  // per step: the screenshot shown, and an optional second one that replaces it later in the step
+  var plan=[['home'],['cookbook'],['dish','ingredients',.5],['ingredients','youtube',.45],['week'],['shopping'],['kitchen']];
+  var cur=-1,shown='',ticking=false;
+  function show(k){if(k===shown)return;shown=k;for(var n in imgs)imgs[n].classList.toggle('on',n===k)}
   function update(){
     ticking=false;
     var vh=window.innerHeight,best=0,bd=1e9;
-    steps.forEach(function(s,i){
-      var r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-vh*.5);
-      if(d<bd){bd=d;best=i}
-    });
-    setStep(best);
-    var r=steps[best].getBoundingClientRect();
-    var p=Math.max(0,Math.min(1,(vh*.5-r.top)/r.height));
-    drive(best,p);
+    steps.forEach(function(s,i){var r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-vh*.5);if(d<bd){bd=d;best=i}});
+    if(best!==cur){cur=best;steps.forEach(function(s,k){s.classList.toggle('on',k===best)});dots.forEach(function(d,k){d.classList.toggle('on',k===best)})}
+    var r=steps[best].getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.5-r.top)/r.height)),pl=plan[best];
+    show(pl[1]&&p>pl[2]?pl[1]:pl[0]);
+    ring.classList.toggle('on',best===0&&p>.45);
   }
   function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  update();
+  window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);update();
 })();
 </script>
 
