@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KhaanaKya — What's cooking today?</title>
 <meta name="description" content="KhaanaKya keeps every dish your household cooks in one place, so deciding what to cook takes one tap. Over 1,100 Indian home dishes. No account, no ads.">
-<meta name="theme-color" content="#500211">
+<meta name="theme-color" content="#FDFBF7">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -16,263 +16,261 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;1,7..72,400&family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: cloth-maroon hero, then a pinned phone beside scrolling story steps, then a closing scene.
-   Look: the app's Heirloom Cookbook tokens (Theme.kt), light + Lamplight dark. */
-:root{
-  --bg:#F7F0E6; --fg:#1F1B18; --muted:#554242; --heading:#500211; --accent:#6E1A24; --saffron:#904D00;
-  --cloth:#500211; --on-cloth:#FFE8D6; --cloth-ink:#E9A85A;
-  --paper:#FDFBF7; --dot:#EBE0DB; --card:#FBF4EF; --cardBorder:#E6D6CF; --chip:#F1E6E1; --hairline:#EBDCD6;
-  --maroonFill:#6E1A24; --onMaroonFill:#fff; --veg:#2E7D32; --rust:#A3361F; --amber:#C98A2E; --thumb:#F1DCC4; --frame:#2A1A16;
-  --display:"Playfair Display",Georgia,serif; --serif:Literata,Georgia,serif; --sans:"Plus Jakarta Sans",system-ui,sans-serif;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#140E0C; --fg:#F3E7D7; --muted:#C9B4A2; --heading:#F2B8A6; --accent:#F2B8A6; --saffron:#E9A85A;
-  --cloth:#2A0A10; --on-cloth:#FFE8D6; --cloth-ink:#E9A85A;
-  --paper:#1B1411; --dot:#2C211C; --card:#251C18; --cardBorder:#3E2F28; --chip:#30241E; --hairline:#3E2F28;
-  --maroonFill:#8E2B36; --onMaroonFill:#FFF1E8; --veg:#7CC47F; --rust:#F0907F; --amber:#E9A85A; --thumb:#3B2D23; --frame:#3E2F2A;color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#140E0C; --fg:#F3E7D7; --muted:#C9B4A2; --heading:#F2B8A6; --accent:#F2B8A6; --saffron:#E9A85A;
-  --cloth:#2A0A10; --on-cloth:#FFE8D6; --cloth-ink:#E9A85A;
-  --paper:#1B1411; --dot:#2C211C; --card:#251C18; --cardBorder:#3E2F28; --chip:#30241E; --hairline:#3E2F28;
-  --maroonFill:#8E2B36; --onMaroonFill:#FFF1E8; --veg:#7CC47F; --rust:#F0907F; --amber:#E9A85A; --thumb:#3B2D23; --frame:#3E2F2A;color-scheme:dark}
+  /* Heirloom Cookbook tokens, taken from the app's Theme.swift. Light only, like the app (ADR-0012). */
+  :root {
+    --paper: #FDFBF7; --paper-dot: #EBE0DB; --card: #FBF4EF; --card-border: #E6D6CF;
+    --rule: #DBC0C0; --tag: #F7ECE7; --ink: #1F1B18; --ink-muted: #554242;
+    --maroon: #6E1A24; --deep-maroon: #500211; --saffron: #904D00;
+    --display: "Playfair Display", Georgia, serif;
+    --body: "Literata", Georgia, serif;
+    --label: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    color-scheme: light;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; color: var(--ink); font: 18px/1.6 var(--body);
+    background-color: var(--paper);
+    background-image: radial-gradient(var(--paper-dot) 1.2px, transparent 1.2px);
+    background-size: 22px 22px;
+    -webkit-font-smoothing: antialiased;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: var(--maroon); }
+  /* Side gutter for every .wrap; blocks that also carry .wrap set only top/bottom padding so they keep it. */
+  .wrap { max-width: 1080px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
 
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--fg);font-family:var(--serif);line-height:1.55;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--saffron);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1120px;margin:0 auto}
+  /* Header */
+  .top { display: flex; align-items: center; justify-content: space-between; padding-top: 20px; padding-bottom: 20px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  .brand span { font: italic 700 24px/1 var(--display); color: var(--deep-maroon); }
+  .top nav a { font: 500 15px var(--label); text-decoration: none; margin-left: 20px; color: var(--ink-muted); }
+  .top nav a:hover { color: var(--maroon); }
 
-/* ---------- hero ---------- */
-.hero{background:var(--cloth);color:var(--on-cloth);margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));
-  padding-inline:max(16px,env(safe-area-inset-left,0px));overflow:hidden;position:relative;
-  background-image:radial-gradient(circle at 8px 8px,rgba(255,232,214,.09) .8px,transparent 1.2px);background-size:16px 16px}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center;padding-block:56px 40px}
-.brand{font-family:var(--display);font-style:italic;font-weight:700;font-size:22px;color:var(--cloth-ink)}
-.hero h1{font-family:var(--display);font-weight:700;font-size:clamp(38px,6vw,68px);line-height:1.05;margin:18px 0 18px;text-wrap:balance}
-.hero h1 em{color:var(--cloth-ink);font-style:italic}
-.hero p.lead{font-size:clamp(17px,2vw,20px);max-width:34ch;opacity:.92;margin:0 0 26px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.btn{font-family:var(--sans);font-weight:700;font-size:15px;text-decoration:none;padding:13px 22px;border-radius:28px;background:var(--cloth-ink);color:#3B1A00;display:inline-block;min-height:44px}
-.btn.alt{background:transparent;color:var(--on-cloth);border:1.5px solid rgba(255,232,214,.5)}
-.hero-art{position:relative;height:440px;display:flex;justify-content:center}
-.dish{position:absolute;width:150px;padding:12px;border-radius:16px;background:var(--paper);color:var(--fg);font-family:var(--sans);box-shadow:0 14px 30px rgba(0,0,0,.35);
-  animation:bob 6s ease-in-out infinite}
-.dish b{display:block;font-size:14px}.dish span{font-size:12px;color:var(--muted)}
-.dish img{display:block;width:100%;height:86px;object-fit:cover;border-radius:10px;margin-bottom:8px;background:var(--thumb)}
-.dish:nth-child(1){left:2%;top:10px;--r:-6deg}
-.dish:nth-child(2){right:0;top:60px;--r:5deg;animation-delay:-2s}
-.dish:nth-child(3){left:14%;bottom:0;--r:3deg;animation-delay:-4s}
-.dish:nth-child(4){right:6%;bottom:30px;--r:-4deg;animation-delay:-1s}
-@keyframes bob{0%,100%{transform:translateY(0) rotate(var(--r))}50%{transform:translateY(-12px) rotate(var(--r))}}
-.scrollcue{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.75;padding-bottom:26px;text-align:center}
-.scrollcue span{display:inline-block;animation:nudge 1.6s ease-in-out infinite}
-@keyframes nudge{50%{transform:translateY(6px)}}
+  /* Labels and ornaments */
+  .eyebrow { font: 700 13px/1 var(--label); letter-spacing: .22em; text-transform: uppercase; color: var(--saffron); margin: 0 0 14px; }
+  .ornament { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--saffron); margin: 0 auto; }
+  .ornament::before, .ornament::after { content: ""; width: 64px; height: 1px; background: var(--rule); }
+  h1, h2, h3 { font-family: var(--display); color: var(--deep-maroon); margin: 0; line-height: 1.12; }
 
-/* ---------- story ---------- */
-.story{padding-block:40px 0}
-.story-grid{display:grid;grid-template-columns:1fr 340px;gap:64px}
-.steps{display:flex;flex-direction:column}
-.step{min-height:100vh;display:flex;flex-direction:column;justify-content:center;opacity:.32;transition:opacity .35s;max-width:46ch}
-.step.on{opacity:1}
-.eyebrow{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron)}
-.step h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,46px);line-height:1.1;color:var(--heading);margin:10px 0 14px;text-wrap:balance}
-.step p{font-size:18px;color:var(--muted);margin:0 0 14px}
-.tags{display:flex;gap:8px;flex-wrap:wrap}
-.tags span{font-family:var(--sans);font-size:13px;font-weight:600;padding:6px 12px;border-radius:16px;background:var(--chip);color:var(--fg)}
-.pin{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center}
-.pinbox{position:relative}
-.dots{position:absolute;left:-30px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px}
-.dots button{all:unset;box-sizing:border-box;width:11px;height:11px;border-radius:50%;cursor:pointer;position:relative}
-.dots button::before{content:"";position:absolute;left:2px;top:2px;width:7px;height:7px;border-radius:50%;background:var(--cardBorder);transition:.3s}
-.dots button:hover::before{background:var(--muted)}
-.dots button.on::before{background:var(--saffron);height:19px;top:-2px;border-radius:5px}
-.dots button:focus-visible{outline:3px solid var(--saffron);outline-offset:2px}
+  /* Hero */
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; padding-top: 40px; padding-bottom: 72px; }
+  .hero h1 { font-size: clamp(40px, 6vw, 68px); letter-spacing: -.01em; }
+  .hero .lede { font-size: 20px; color: var(--ink-muted); margin: 20px 0 32px; max-width: 32em; }
+  .hero .phone { justify-self: center; max-width: 340px; filter: drop-shadow(0 24px 40px rgba(80, 2, 17, .14)); }
 
-/* ---------- progress bar + hero strip ---------- */
-.prog{position:fixed;left:0;right:0;top:0;height:4px;z-index:50;background:transparent;pointer-events:none}
-.prog i{display:block;height:100%;background:var(--cloth-ink);transform-origin:0 50%;transform:scaleX(var(--prog,0))}
-@supports (animation-timeline:scroll()){.prog i{transform:scaleX(0);animation:grow linear both;animation-timeline:scroll(root)}}
-@keyframes grow{to{transform:scaleX(1)}}
-.strip{display:flex;gap:10px 28px;flex-wrap:wrap;justify-content:center;font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;color:var(--on-cloth);opacity:.9;padding:0 0 22px}
-.strip span::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cloth-ink);margin-right:9px;vertical-align:1px}
-.tilt{transform-origin:50% 60%;will-change:transform}
-/* ---------- phone (real app screenshots) ---------- */
-.phone{width:300px;height:620px;border-radius:44px;background:var(--frame);padding:9px;box-shadow:0 30px 60px rgba(60,20,10,.28),0 0 0 1px rgba(0,0,0,.2);transform-origin:center}
-.screen{position:relative;width:100%;height:100%;border-radius:36px;overflow:hidden;background:#FDFBF7}
-.screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .6s ease,transform .8s cubic-bezier(.2,.8,.2,1);transform:translateY(14px) scale(.98)}
-.screen img.on{opacity:1;transform:none}
-.ring{position:absolute;left:64%;top:12.4%;width:31%;height:4.6%;border-radius:20px;border:3px solid #E9A85A;opacity:0;pointer-events:none;box-shadow:0 0 0 0 rgba(233,168,90,.6);z-index:2}
-.ring.on{opacity:1;animation:ping 1.4s ease-out infinite}
-@keyframes ping{to{box-shadow:0 0 0 14px rgba(233,168,90,0)}}
+  /* Store buttons */
+  .stores { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+  .store {
+    display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px 10px 16px; border-radius: 12px;
+    background: var(--maroon); color: #fff; text-decoration: none; font-family: var(--label); min-width: 180px;
+    transition: background .15s;
+  }
+  .store:hover { background: var(--deep-maroon); }
+  .store svg { width: 26px; height: 26px; flex: none; fill: currentColor; }
+  .store small { display: block; font-size: 11px; opacity: .85; letter-spacing: .02em; }
+  .store b { display: block; font-size: 17px; font-weight: 700; line-height: 1.15; }
+  .note { font: 500 14px var(--label); color: var(--ink-muted); margin-top: 14px; }
 
-/* ---------- closing ---------- */
-.close{margin-left:calc(-1*max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)));padding-inline:max(16px,env(safe-area-inset-left,0px));
-  background:var(--cloth);color:var(--on-cloth);text-align:center;padding-block:96px;margin-top:40px;
-  background-image:radial-gradient(circle at 8px 8px,rgba(255,232,214,.09) .8px,transparent 1.1px);background-size:16px 16px}
-.close h2{font-family:var(--display);font-size:clamp(34px,5vw,58px);line-height:1.08;margin:0 auto 14px;max-width:16ch;text-wrap:balance}
-.close h2 em{color:var(--cloth-ink)}
-.close p{max-width:40ch;margin:0 auto 28px;opacity:.9;font-size:18px}
-.close .cta{justify-content:center}
-footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--muted);padding:24px 0 32px}
+  /* Sections */
+  section { padding: 72px 0; }
+  .center { text-align: center; }
+  .section-head { max-width: 640px; margin: 0 auto 48px; text-align: center; }
+  .section-head h2 { font-size: clamp(32px, 4.5vw, 46px); margin-bottom: 14px; }
+  .section-head p { color: var(--ink-muted); margin: 0; }
 
-/* ---------- narrow ---------- */
-@media (max-width:860px){
-  .hero .wrap{grid-template-columns:1fr;padding-block:36px 20px}
-  .hero-art{height:320px}.dish{width:124px;padding:9px}.dish img{height:56px}
-  .story-grid{display:block;position:relative}
-  .pin{position:sticky;top:0;height:60vh;z-index:3;background:linear-gradient(var(--bg) 80%,transparent);align-items:flex-start;padding-top:8px}
-  .phone{transform:scale(.62);transform-origin:top center;margin-bottom:-230px}
-  .tilt{transform-origin:top center}
-  .dots{display:none}
-  .pinbox{height:400px}
-  .steps{margin-top:-6vh}
-  .step{min-height:70vh;justify-content:flex-end;padding-bottom:6vh;background:linear-gradient(transparent,var(--bg) 18%);max-width:none}
-}
-@media (prefers-reduced-motion:reduce){
-  *{animation:none!important;transition-duration:.01s!important}
-  .tilt{transform:none!important}
-}
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+  .step { text-align: center; }
+  .step img { max-width: 260px; margin: 0 auto 24px; filter: drop-shadow(0 16px 28px rgba(80, 2, 17, .12)); }
+  .step .num { font: 700 13px var(--label); letter-spacing: .18em; color: var(--saffron); text-transform: uppercase; }
+  .step h3 { font-size: 26px; margin: 8px 0 10px; }
+  .step p { color: var(--ink-muted); margin: 0 auto; max-width: 22em; font-size: 17px; }
+
+  .features { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .feature { background: var(--card); border: 1px solid var(--card-border); border-radius: 6px; padding: 28px; }
+  .feature h3 { font-size: 22px; margin-bottom: 8px; display: flex; align-items: baseline; gap: 10px; }
+  .feature h3::before { content: "✦"; font-size: 13px; color: var(--saffron); }
+  .feature p { margin: 0; color: var(--ink-muted); font-size: 17px; }
+
+  .kitchens { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 36px; }
+  .kitchens span { font: 500 15px var(--label); padding: 10px 16px; border-radius: 4px; }
+
+  .split { max-width: 640px; text-align: center; }
+  .split h2 { font-size: clamp(32px, 4.5vw, 44px); margin-bottom: 16px; }
+  .split p { color: var(--ink-muted); }
+  .split ul { list-style: none; padding: 0; margin: 20px auto 24px; display: inline-block; text-align: left; }
+  .split li { padding: 8px 0 8px 28px; position: relative; border-bottom: 1px dashed var(--rule); }
+  .split li::before { content: "✦"; position: absolute; left: 4px; color: var(--saffron); font-size: 13px; top: 12px; }
+
+  .cta { background: var(--maroon); color: #FFDADA; border-radius: 8px; padding: 56px 24px; text-align: center; margin: 24px 0 72px; }
+  .cta h2 { color: #fff; font-size: clamp(32px, 4.5vw, 46px); margin-bottom: 12px; }
+  .cta p { margin: 0 0 28px; }
+  .cta .stores { justify-content: center; }
+  .cta .store { background: #fff; color: var(--maroon); }
+  .cta .note { color: #FFDADA; }
+
+  footer { border-top: 1px solid var(--rule); padding: 28px 0 40px; font: 15px var(--label); color: var(--ink-muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; }
+  footer a { color: var(--ink-muted); }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding-top: 16px; text-align: center; }
+    .hero .lede { margin-left: auto; margin-right: auto; }
+    .hero .stores { justify-content: center; }
+    .steps { grid-template-columns: 1fr; gap: 56px; }
+    .features { grid-template-columns: 1fr; }
+    .top nav a:not(:last-child) { display: none; }
+    section { padding: 56px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
 
-
-<div class="prog" aria-hidden="true"><i id="progbar"></i></div>
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <div class="brand">KhaanaKya</div>
-      <h1>Never again ask, <em>“aaj khaane mein kya banega?”</em></h1>
-      <p class="lead">Pick tonight's dish, plan the week, shop for it and keep an eye on your kitchen. Scroll to watch the app at work.</p>
-      <div class="cta">
-        <a class="btn" href="#tour">See how it works</a>
-        <a class="btn alt" href="#get">Get the app</a>
-      </div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="dish"><img src="assets/dishes/aloo-paratha.webp" alt="" width="400" height="400"><b>Aloo Paratha</b><span>Breakfast · 25 min</span></div>
-      <div class="dish"><img src="assets/dishes/dal-tadka.webp" alt="" width="400" height="400"><b>Dal Tadka</b><span>Dinner · 35 min</span></div>
-      <div class="dish"><img src="assets/dishes/paneer-butter-masala.webp" alt="" width="400" height="400"><b>Paneer Butter Masala</b><span>North Indian · 40 min</span></div>
-      <div class="dish"><img src="assets/dishes/rajma-chawal.webp" alt="" width="400" height="400"><b>Rajma Chawal</b><span>Lunch · 50 min</span></div>
-    </div>
-  </div>
-  <div class="strip"><span>1,100+ Indian home dishes</span><span>No account</span><span>No ads</span><span>iPhone and Android</span></div>
-  <div class="scrollcue" aria-hidden="true"><span>↓</span> Scroll</div>
+<header class="wrap top">
+  <a class="brand" href="./"><img src="assets/icon-256.webp" alt="" width="40" height="40"><span>KhaanaKya</span></a>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#features">Features</a>
+    <a href="#download">Download</a>
+  </nav>
 </header>
 
-<main class="story" id="tour">
-  <div class="wrap story-grid">
-    <div class="steps">
-      <section class="step on" data-i="0">
-        <div class="eyebrow">Home</div>
-        <h2>Can't decide? Let the app pick.</h2>
-        <p>Search over a thousand home dishes by meal, or tap Pick for me and get one suggestion for right now.</p>
-        <div class="tags"><span>Breakfast to dinner</span><span>Pick for me</span><span>Search</span></div>
-      </section>
-      <section class="step" data-i="1">
-        <div class="eyebrow">Cookbook</div>
-        <h2>Every cuisine on one shelf.</h2>
-        <p>Flip through North Indian, South Indian, Gujarati, Bengali and more, or jump straight to a letter.</p>
-        <div class="tags"><span>Cuisine shelf</span><span>A to Z</span></div>
-      </section>
-      <section class="step" data-i="2">
-        <div class="eyebrow">Dish page</div>
-        <h2>Every ingredient, with a picture.</h2>
-        <p>Open a dish to see how long it takes and exactly what goes in. Copy the ingredients, or save the dish to a list.</p>
-        <div class="tags"><span>Cooking time</span><span>Full ingredients</span><span>Add to a list</span></div>
-      </section>
-      <section class="step" data-i="3">
-        <div class="eyebrow">Recipe video</div>
-        <h2>Need to see it cooked?</h2>
-        <p>Tap Find a recipe and search YouTube for the dish, or browse Instagram, so you can watch someone make it first.</p>
-        <div class="tags"><span>Search YouTube</span><span>Browse Instagram</span></div>
-      </section>
-      <section class="step" data-i="4">
-        <div class="eyebrow">Week plan</div>
-        <h2>Fill the week in a few taps.</h2>
-        <p>Give each day a lunch and a dinner. The plan keeps the week varied, and curated plans get you started.</p>
-        <div class="tags"><span>Lunch and dinner</span><span>Curated plans</span></div>
-      </section>
-      <section class="step" data-i="5">
-        <div class="eyebrow">Shopping list</div>
-        <h2>One list for the whole week.</h2>
-        <p>Ingredients from every planned dish come together, grouped by where you find them. Tick them off as you shop.</p>
-        <div class="tags"><span>Grouped by aisle</span><span>Tick as you go</span></div>
-      </section>
-      <section class="step" data-i="6">
-        <div class="eyebrow">Kitchen</div>
-        <h2>Know what's left in the kitchen.</h2>
-        <p>See how many days of each staple remain, what is running low and what ran out, so the next shopping list is already right.</p>
-        <div class="tags"><span>Days left</span><span>Running low</span><span>Ran out</span></div>
-      </section>
-    </div>
-
-    <div class="pin">
-      <div class="pinbox">
-        <nav class="dots" id="dots" aria-label="Tour steps"><button class="on" aria-label="Home"></button><button aria-label="Cookbook"></button><button aria-label="Dish page"></button><button aria-label="Recipe video"></button><button aria-label="Week plan"></button><button aria-label="Shopping list"></button><button aria-label="Kitchen"></button></nav>
-        <div class="tilt" id="tilt"><div class="phone" role="img" aria-label="Screens from the KhaanaKya app, changing as you scroll">
-          <div class="screen" id="screen">
-            <img data-k="home" class="on" src="assets/tour/home.jpg" alt="" width="1320" height="2868">
-            <img data-k="cookbook" src="assets/tour/cookbook.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <img data-k="dish" src="assets/tour/youtube-bar.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <img data-k="ingredients" src="assets/tour/ingredients.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <img data-k="youtube" src="assets/tour/youtube.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <img data-k="week" src="assets/tour/week-plan.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <img data-k="shopping" src="assets/tour/shopping.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <img data-k="kitchen" src="assets/tour/kitchen.jpg" alt="" width="1320" height="2868" loading="lazy">
-            <div class="ring" id="ring"></div>
-          </div>
-        </div></div>
+<main>
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Khaana kya banega?</p>
+      <h1>What's cooking today? Decided in one tap.</h1>
+      <p class="lede">KhaanaKya keeps every dish your household actually cooks in one place, so the daily "what should we make?" takes seconds instead of a family debate.</p>
+      <div class="stores">
+        <a class="store" href="https://apps.apple.com/app/id6825362332">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.77 1.1 1.68 2.34 2.87 2.3 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.42-.93-2.44-3.67zM14.1 5.85c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.09 1.76-.96 2.79 1.02.08 2.06-.51 2.69-1.27z"/></svg>
+          <span><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=ace.developer.khaanakya">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2c-.2.2-.3.6-.3 1v17.6c0 .4.1.8.3 1l.1.1 9.9-9.9v-.2L3.7 2.1l-.1.1zm13.3 13.2-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2h-.1zm-.1.1L13.4 12 3.6 21.8c.4.4 1 .4 1.6.1l11.6-6.4M16.8 8.5 5.2 2c-.7-.4-1.3-.3-1.6.1l9.8 9.8 3.4-3.4z"/></svg>
+          <span><small>Get it on</small><b>Google Play</b></span>
+        </a>
       </div>
+      <p class="note">Free on iPhone and Android · No account, no ads</p>
+    </div>
+    <img class="phone" src="assets/screen-home.webp" width="540" height="1147" alt="KhaanaKya home screen: 'What's cooking today?' above a menu of dishes like Aloo Paratha, Aloo Posto and Baingan Bharta, with a Pick for me button.">
+  </div>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>Your kitchen, your menu</h2>
+        <p>Set up once in under a minute. After that, the app is just your family's own menu card.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <img src="assets/screen-kitchen.webp" width="540" height="1147" loading="lazy" alt="Pick your kitchen screen with North Indian and Bengali selected.">
+          <div class="num">Step 1</div>
+          <h3>Pick your kitchen</h3>
+          <p>Tell it your diet and the kitchens you cook from: North Indian, Bengali, Gujarati and more. Their everyday dishes go straight onto your menu.</p>
+        </div>
+        <div class="step">
+          <img src="assets/screen-pick.webp" width="540" height="1147" loading="lazy" alt="Today's pick card showing Aloo Paratha, with Pick again and Open dish buttons.">
+          <div class="num">Step 2</div>
+          <h3>Can't decide? Pick for me</h3>
+          <p>Filter by meal or main ingredient, or tap <em>Pick for me</em> and let the app choose today's dish from your menu.</p>
+        </div>
+        <div class="step">
+          <img src="assets/screen-dish.webp" width="540" height="1147" loading="lazy" alt="Aloo Paratha dish page with ingredients, cooking time and a Find a recipe button.">
+          <div class="num">Step 3</div>
+          <h3>Start cooking</h3>
+          <p>See the ingredients and how long it takes, copy the shopping list, and open your saved recipe video, or search YouTube and Instagram for one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Made for Indian homes</p>
+        <h2>A cookbook that knows your rotation</h2>
+        <p>Most families cook the same thirty-odd dishes on repeat. KhaanaKya keeps those front and centre, and the rest close at hand.</p>
+      </div>
+      <div class="features">
+        <div class="feature">
+          <h3>1,100+ home dishes</h3>
+          <p>The Cookbook holds Indian home cooking from every region: dal-sabzi, breakfast staples, street food, mithai and chai-time snacks. Add any of them to your menu with one tap.</p>
+        </div>
+        <div class="feature">
+          <h3>Veg, egg or non-veg</h3>
+          <p>Choose what your household eats and the app only shows dishes that fit. Change it any time in Settings.</p>
+        </div>
+        <div class="feature">
+          <h3>Your own dishes too</h3>
+          <p>Cook something the Cookbook doesn't have? Add it with just a name, and paste the reel or video you learned it from.</p>
+        </div>
+        <div class="feature">
+          <h3>Filters that find something</h3>
+          <p>Breakfast, lunch/dinner or snacks. Paneer, dal, rice, meat. Narrow the menu down to what you're in the mood for, or what's in the fridge.</p>
+        </div>
+      </div>
+      <div class="kitchens" aria-label="Kitchens in the Cookbook">
+        <span style="background:#6E1A24;color:#FFDADA">North Indian</span>
+        <span style="background:#373C2B;color:#E0E5CC">South Indian</span>
+        <span style="background:#8C3A27;color:#FFE8DE">Bengali</span>
+        <span style="background:#FE932C;color:#500211">Gujarati</span>
+        <span style="background:#2E3A66;color:#E3E6F5">Rajasthani</span>
+        <span style="background:#2E5E3A;color:#DDEFD9">Maharashtrian</span>
+        <span style="background:#A3352A;color:#FFE3DA">Street food &amp; chaat</span>
+        <span style="background:#7A1F4B;color:#FBE0EC">Sweets &amp; mithai</span>
+        <span style="background:#1F4E5A;color:#DCEEF0">Chai &amp; drinks</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="privacy">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Private by design</p>
+        <h2>Your menu stays on your phone</h2>
+        <p>KhaanaKya works without an account or sign-in. Everything you add lives on your device.</p>
+        <ul>
+          <li>No account, no sign-in, no ads</li>
+          <li>Your dishes, notes and photos never leave your phone</li>
+          <li>Anonymous usage reports only, and you can switch them off</li>
+        </ul>
+        <p><a href="privacy/">Read the privacy policy →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="cta" id="download">
+      <h2>Stop asking "khaana kya?"</h2>
+      <p>KhaanaKya is free, with no account and no ads.</p>
+      <div class="stores">
+        <a class="store" href="https://apps.apple.com/app/id6825362332">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.48.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.27-1.6 2.78-.41 6.9 1.15 9.16.77 1.1 1.68 2.34 2.87 2.3 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.02-1.12 2.78-2.23.88-1.28 1.24-2.52 1.26-2.58-.03-.01-2.42-.93-2.44-3.67zM14.1 5.85c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.67 1.37-.58.67-1.09 1.76-.96 2.79 1.02.08 2.06-.51 2.69-1.27z"/></svg>
+          <span><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=ace.developer.khaanakya">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.6 2.2c-.2.2-.3.6-.3 1v17.6c0 .4.1.8.3 1l.1.1 9.9-9.9v-.2L3.7 2.1l-.1.1zm13.3 13.2-3.3-3.3v-.2l3.3-3.3.1.1 3.9 2.2c1.1.6 1.1 1.7 0 2.3l-3.9 2.2h-.1zm-.1.1L13.4 12 3.6 21.8c.4.4 1 .4 1.6.1l11.6-6.4M16.8 8.5 5.2 2c-.7-.4-1.3-.3-1.6.1l9.8 9.8 3.4-3.4z"/></svg>
+          <span><small>Get it on</small><b>Google Play</b></span>
+        </a>
+      </div>
+      <p class="note">Out now on iPhone and Android.</p>
     </div>
   </div>
 </main>
 
-<section class="close" id="get">
-  <h2>Dinner decided. <em>Kitchen sorted.</em></h2>
-  <p>KhaanaKya is free to start. Pick a dish tonight and see how much easier the week feels.</p>
-  <div class="cta">
-    <a class="btn" href="https://play.google.com/store/apps/details?id=ace.developer.khaanakya" target="_blank" rel="noopener">Get it on Google Play</a>
-    <a class="btn alt" href="https://apps.apple.com/app/id6825362332" target="_blank" rel="noopener">Download on the App Store</a>
+<footer>
+  <div class="wrap">
+    <span>© 2026 KhaanaKya</span>
+    <span><a href="privacy/">Privacy policy</a> · <a href="mailto:chandilsachin@gmail.com">Contact</a></span>
   </div>
-</section>
-<footer>KhaanaKya · No account, no ads · <a href="privacy/">Privacy policy</a> · <a href="mailto:chandilsachin@gmail.com">Contact</a></footer>
-
-<script>
-(function(){
-  var steps=[].slice.call(document.querySelectorAll('.step'));
-  var imgs={};[].forEach.call(document.querySelectorAll('#screen img'),function(i){imgs[i.dataset.k]=i});
-  var dots=[].slice.call(document.querySelectorAll('#dots button')),ring=document.getElementById('ring');
-  var tilt=document.getElementById('tilt'),story=document.getElementById('tour'),bar=document.getElementById('progbar');
-  var cssBar=window.CSS&&CSS.supports&&CSS.supports('animation-timeline','scroll()');
-  var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  dots.forEach(function(d,k){d.addEventListener('click',function(){var r=steps[k].getBoundingClientRect();window.scrollTo({top:scrollY+r.top+r.height/2-innerHeight/2,behavior:still?'auto':'smooth'})})});
-  // per step: the screenshot shown, and an optional second one that replaces it later in the step
-  var plan=[['home'],['cookbook'],['dish','ingredients',.5],['ingredients','youtube',.45],['week'],['shopping'],['kitchen']];
-  var cur=-1,shown='',ticking=false;
-  function show(k){if(k===shown)return;shown=k;for(var n in imgs)imgs[n].classList.toggle('on',n===k)}
-  function update(){
-    ticking=false;
-    var vh=window.innerHeight,best=0,bd=1e9;
-    steps.forEach(function(s,i){var r=s.getBoundingClientRect(),d=Math.abs(r.top+r.height/2-vh*.5);if(d<bd){bd=d;best=i}});
-    if(best!==cur){cur=best;steps.forEach(function(s,k){s.classList.toggle('on',k===best)});dots.forEach(function(d,k){d.classList.toggle('on',k===best)})}
-    var r=steps[best].getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.5-r.top)/r.height)),pl=plan[best];
-    show(pl[1]&&p>pl[2]?pl[1]:pl[0]);
-    ring.classList.toggle('on',best===0&&p>.45);
-    // the phone arrives tilted back and straightens as the tour reaches the top of the screen
-    var t=still?1:Math.max(0,Math.min(1,1-story.getBoundingClientRect().top/(vh*.85)));
-    var e=1-Math.pow(1-t,3);
-    tilt.style.transform=t>=1?'':'perspective(1400px) rotateX('+((1-e)*22).toFixed(2)+'deg) rotateZ('+((1-e)*-7).toFixed(2)+'deg) translateY('+((1-e)*40).toFixed(1)+'px) scale('+(.9+.1*e).toFixed(3)+')';
-    if(!cssBar){var m=document.documentElement.scrollHeight-vh;bar.parentNode.style.setProperty('--prog',m>0?Math.min(1,scrollY/m):0)}
-  }
-  function onScroll(){if(!ticking){ticking=true;requestAnimationFrame(update)}}
-  window.addEventListener('scroll',onScroll,{passive:true});window.addEventListener('resize',onScroll);update();
-})();
-</script>
+</footer>
 
 </body>
 </html>
